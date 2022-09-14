@@ -1,4 +1,4 @@
-# # gke-notifications-to-slack 
+# gke-notifications-to-slack 
 
 A Cloud Function that will parse the GKE cluster upgrade notifications and send them to a slack channel. Inspired by https://github.com/shipwreckdev/gke-notification-handler, Added support to retrieve secrets from the GCP secret manager and improved logging
 
@@ -14,8 +14,6 @@ You'll need a Slack application with an incoming webhook token that has permissi
 - You must also configure your cluster to send notifications to the topic when upgrade events are triggered. This is currently available for configuration via Terraform in the google-beta provider/UI/CLI. Refer to https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-notifications#enabling_upgrade_notifications for more details
 
 ### Python script
-
-#### Source
 
 - `main.py` - The python script processes the event received from pub/sub topic and publishes the messages to the slack channel.
 
